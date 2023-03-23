@@ -1,7 +1,20 @@
+import { useState } from "react"
+import { Iitens } from "../../types/item"
 import { Button } from "../Button"
-import { Form1 } from "../Form1/intex"
+import { Form1 } from "../Form1/index"
+interface Props{
 
-export const Form = () =>{
+  setItens: React.Dispatch<React.SetStateAction<Iitens[]>>
+}
+
+export const Form = ({itens}: {itens: Iitens[]}) =>{
+
+  const [descricao, setDescricao] = useState("")
+  const [quantidade, setState] = useState(0)
+  const [valorUnitario, setValorUnitario] = useState(0)
+  const adicionarItem = (e:React.FormEvent<HTMLFormElement>)=>{
+    e.preventDefault();
+} 
   return(
     <>
     <form>
@@ -19,6 +32,7 @@ export const Form = () =>{
     </div>
   </form>
   <Form1/>
+  <Table itens={itens}/>
   <div  className='line-input'>
       <Button>Salvar</Button>
     </div>

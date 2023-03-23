@@ -1,6 +1,10 @@
+import { useState } from "react";
+import { Iitens } from "../../types/item";
 import { Button } from "../Button"
+import { Table } from "../Table"
 
 export const Form1 = () =>{
+  
   return(
     <>
     <h2>Itens da <span>Faturas</span></h2>
@@ -9,7 +13,7 @@ export const Form1 = () =>{
       <label>Descrição:</label>
       <div className='lineDescription'>
       <input id='description' className="cpfcnpj" list="listaConsumidores" type="text" placeholder="Digite o nome o item" autoComplete="off" />
-      <button id='btnAdd'>+</button>
+      <button type="submit" id='btnAdd'>+</button>
       </div>
     </div>
     <div className='line-input'>
@@ -21,7 +25,8 @@ export const Form1 = () =>{
       <input type="number" id="competencia" placeholder="Digite o valor unitario" />
     </div>
     <div className='line-input'>
-    <Button >Adicionar Item </Button>
+    <Button  >Adicionar Item </Button>
+    
     </div>
    
   </form>
