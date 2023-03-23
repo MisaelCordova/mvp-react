@@ -1,20 +1,13 @@
-import { useState } from "react"
+import React, { useState } from "react"
 import { Iitens } from "../../types/item"
 import { Button } from "../Button"
 import { Form1 } from "../Form1/index"
-interface Props{
+import { Table } from "../Table"
 
-  setItens: React.Dispatch<React.SetStateAction<Iitens[]>>
-}
 
-export const Form = ({itens}: {itens: Iitens[]}) =>{
+export const Form = () =>{
+    const [itens, setItens] = React.useState<Iitens[] |[]>([]);
 
-  const [descricao, setDescricao] = useState("")
-  const [quantidade, setState] = useState(0)
-  const [valorUnitario, setValorUnitario] = useState(0)
-  const adicionarItem = (e:React.FormEvent<HTMLFormElement>)=>{
-    e.preventDefault();
-} 
   return(
     <>
     <form>
@@ -31,7 +24,7 @@ export const Form = ({itens}: {itens: Iitens[]}) =>{
       <input type="date" id="competencia" placeholder="Digite a Competência" />
     </div>
   </form>
-  <Form1/>
+  <Form1 setItens={setItens}/>
   <Table itens={itens}/>
   <div  className='line-input'>
       <Button>Salvar</Button>

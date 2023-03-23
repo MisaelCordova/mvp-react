@@ -2,24 +2,19 @@ import { useState } from 'react'
 import { Iitens } from '../../types/item'
 import { Line } from '../Line'
 import './Table.css'
-export const Table =() =>{
+interface Props{
 
+  setItens: React.Dispatch<React.SetStateAction<Iitens[]>>
+}
+export const Table =({itens}: {itens: Iitens[]}) =>{
 
-//   const [itens,setItens] = useState([{
-//       descricao: 'Iluminação pública',
-//       quantidade: 15,
-//       valorUnitario: 0.5552
-//   },{
-//     descricao: 'consumo',
-//     quantidade: 120,
-//     valorUnitario: 0.5552
-// }])
   return(
     <table>
       <thead>
         <th>Descrição</th>
         <th>Quantidade</th>
         <th>Valor Unitário</th>
+        <th>Valor Total</th>
       </thead>
       <tbody>
         {itens.map((item,index)=>
