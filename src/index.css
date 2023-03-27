@@ -7,7 +7,7 @@ small, strike, strong, sub, sup, tt, var,
 b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset,  legend,
-caption, tbody, tfoot, thead, tr, th, td,
+caption, tbody, tfoot, thead, th, td,
 article, aside, canvas, details, embed, 
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
@@ -55,6 +55,7 @@ table {
 div{
   margin: 0;
 }
+
 span{
   color: #644FE0;
 }
@@ -141,11 +142,11 @@ tbody th{
   border: 1px solid black;
   padding: 8px;
 }
-tbody tr:nth-child(even){
-  background-color: #f2f2f2;
-}
 table{
   border-collapse: collapse;
+}
+.linhaSelecionada{
+ border: 2px solid #644FE0;
 }
 @media screen and (min-height:1000px){
      body{
